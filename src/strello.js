@@ -18,8 +18,10 @@ Strello.prototype.setLists = function(listArray) {
 };
 
 Strello.prototype.deleteList = function(id) {
-  if (this.lists[id]) {
-    this.lists.splice(id, 1);
+  for (let i = this.lists.length - 1; i >= 0; i -= 1) {
+    if (this.lists[i].id === id) {
+      this.lists.splice(i,1);
+    }
   }
   this.cards = this.cards.filter(card => card.l !== id);
 };
@@ -61,8 +63,10 @@ Strello.prototype.moveCard = function(cardId, listId) {
 };
 
 Strello.prototype.deleteCard = function(id) {
-  if (this.cards[id]) {
-    this.cards.splice(id, 1);
+  for (let i = this.cards.length - 1; i >= 0; i -= 1) {
+    if (this.cards[i].id === id) {
+      this.cards.splice(i,1);
+    }
   }
 };
 
