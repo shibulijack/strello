@@ -14,6 +14,11 @@ function persistData() {
   }
 }
 
+function setContainerWidth(len) {
+  const containerNode = document.getElementById('list-container');
+  containerNode.setAttribute('style', `width: ${len * 320}px;`);
+}
+
 function deleteList(id) {
   const listNode = document.getElementById(`list-${id}`);
   strello.deleteList(id);
@@ -157,6 +162,7 @@ function renderList(id, title) {
   list.appendChild(listFooter);
 
   document.getElementById('list-container').appendChild(list);
+  setContainerWidth(strello.getLists().length);
 }
 
 function populateBoard() {
@@ -173,6 +179,7 @@ function populateBoard() {
       strello.getCards().forEach(cardItem => {
         renderCard(cardItem.l, cardItem.t, cardItem.id);
       });
+      setContainerWidth(strello.getLists().length);
     }
   }
   catch (e) {

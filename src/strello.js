@@ -18,7 +18,7 @@ Strello.prototype.setLists = function(listArray) {
 };
 
 Strello.prototype.deleteList = function(id) {
-  if (id < this.lists.length) {
+  if (this.lists[id]) {
     this.lists.splice(id, 1);
   }
   this.cards = this.cards.filter(card => card.l !== id);
@@ -61,7 +61,7 @@ Strello.prototype.moveCard = function(cardId, listId) {
 };
 
 Strello.prototype.deleteCard = function(id) {
-  if (id < this.cards.length) {
+  if (this.cards[id]) {
     this.cards.splice(id, 1);
   }
 };

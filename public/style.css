@@ -6,9 +6,10 @@
 
 .card {
   border: 0 !important;
-  float: left;
   margin: 0.5rem;
   width: 19rem;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .card-header {
@@ -62,6 +63,14 @@
 .form-group textarea {
   border: 1px solid rgba(0,0,0,0.02) !important;
   font-size: 0.875rem;
+}
+
+/* Horizontal scroll
+-------------------------------------------------- */
+.list-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 20px;
 }
 
 /* Sticky footer styles
