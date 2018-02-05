@@ -1,0 +1,7 @@
+node_modules
+__coverage__
+__docs__
+bundle/bundle.js
+/__jsDoc__
+/__test__
+/.DS_Store

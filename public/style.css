@@ -1,0 +1,91 @@
+/* Bootstrap overrides
+-------------------------------------------------- */
+.bg-light {
+  background-color: #f0f2f4!important;
+}
+
+.card {
+  border: 0 !important;
+  float: left;
+  margin: 0.5rem;
+  width: 19rem;
+}
+
+.card-header {
+  background-color: rgba(0,0,0,0.01);
+  border-bottom: 1px dashed rgba(0, 0, 0, .05);
+  text-align: center;
+  font-weight: 500;
+}
+
+.card-header .close {
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+}
+
+.card-header .close:hover {
+  color: #EF5350 !important;
+}
+
+.list-group-item {
+  border: 1px dashed rgba(0, 0, 0, .05);
+  font-size: 0.875rem;
+}
+
+.list-group-item.editing {
+  border-left: 2px solid #4CAF50 !important;
+}
+
+.list-group-item .close {
+  visibility: hidden;
+  font-size: 0.5rem;
+  line-height: 1.3rem;
+}
+
+.list-group-item:hover .close {
+  visibility: visible;
+}
+
+.card-footer {
+  background-color: rgba(0,0,0,0.01);
+  border-top: 0;
+}
+
+.box-shadow {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+}
+
+.form-control {
+  border-color: #fff;
+}
+
+.form-group textarea {
+  border: 1px solid rgba(0,0,0,0.02) !important;
+  font-size: 0.875rem;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 48px; /* Margin bottom by footer height */
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  background-color: rgba(0,0,0,0.05);
+  font-size: 0.75rem;
+}
+
+/* Nav edits
+-------------------------------------------------- */
+.social-links 
+{
+  font-size: 0.875rem;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Simple Trello">
+  <meta name="author" content="Shibu Lijack">
+  <title>Strello</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="public/style.css">
+  <link rel="stylesheet" href="public/open-iconic.css">
+</head>
+
+<body class="bg-light">
+  <header>
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">About</h4>
+            <p class="text-muted">A simple task organizer.</p>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">Contact</h4>
+            <ul class="list-unstyled social-links">
+              <li>
+                <a href="https://github.com/shibulijack">Github</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark box-shadow">
+      <div class="container-fluid d-flex justify-content-between">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <span class="oi" data-glyph="task"></span>
+          <strong>Strello</strong>
+        </a>
+        <form id="add-list-form" class="form-inline my-2 my-lg-0">
+          <input id="add-list-text" name="add-list-text" class="form-control mr-sm-2" type="text" placeholder="Add New List" aria-label="Add List"
+            required>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            <span class="oi" data-glyph="plus"></span>
+          </button>
+        </form>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+      </div>
+    </div>
+  </header>
+  <main role="main">
+
+    <div class="album py-5">
+      <div class="container-fluid">
+        <div class="list-wrapper">
+          <div id="list-container">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container-fluid">
+      <span class="text-muted">Developed by Shibu Lijack</span>
+    </div>
+  </footer>
+  <script src="build/bundle.js"></script>
+</body>
+
+</html>
