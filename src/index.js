@@ -135,16 +135,34 @@ function renderList(id, title) {
   listFooter.className = 'card-footer text-muted';
 
   const addCardForm = document.createElement('form');
-  addCardForm.onsubmit = function() {
+  addCardForm.id = `list-${id}-form`;
+  addCardForm.onsubmit = function(ev) {
+    ev.preventDefault();
     addCard(id);
     return false;
   };
-  addCardForm.innerHTML = `
-    <div class="form-group mb-0">
-      <textarea class="form-control box-shadow" id="add-card-area-${id}" 
-      name="add-card-area-${id} minlength="3" maxlength="100" 
-      placeholder="Enter text here" rows="2"></textarea>
-      <div class="d-flex justify-content-between align-items-center pt-3">
+
+  const textAreaBox = document.createElement('textarea');
+  textAreaBox.className = 'form-control box-shadow';
+  textAreaBox.id = `add-card-area-${id}`;
+  textAreaBox.name = `add-card-area-${id}`;
+  textAreaBox.dataset.id = id;
+  textAreaBox.maxLength = 100;
+  textAreaBox.placeholder = `Enter new card`;
+  textAreaBox.rows = 2;
+  textAreaBox.addEventListener('keydown',function(e) {
+    if(e.keyCode === 13) {
+      e.preventDefault();
+      const formId = this.dataset.id;
+      document.getElementById(`list-${formId}-form`)
+        .querySelector('button[type=submit]').click();
+    }
+  });
+
+  const buttonSubmit = document.createElement('div');
+  buttonSubmit.className = 
+    'd-flex justify-content-between align-items-center pt-3';
+  buttonSubmit.innerHTML += `
         <div class="btn-group">
           <button type="submit" class="btn btn-sm btn-outline-primary">
           Add Card</button>
@@ -152,8 +170,11 @@ function renderList(id, title) {
           class="btn btn-sm btn-outline-primary">
             <span class="oi" data-glyph="delete"></span>
           </button>
-        </div>
-      </div>`;
+        </div>`;
+
+  addCardForm.appendChild(textAreaBox);
+  addCardForm.appendChild(buttonSubmit);
+
   listFooter.appendChild(addCardForm);
   listFooter.setAttribute('draggable', false);
 
