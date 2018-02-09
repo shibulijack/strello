@@ -134,8 +134,18 @@ function renderList(id, title) {
   const listFooter = document.createElement('div');
   listFooter.className = 'card-footer text-muted';
 
+  const showFormButton = document.createElement('button');
+  showFormButton.className = 'btn btn-secondary btn-sm btn-block';
+  showFormButton.id = `list-${id}-btn`;
+  showFormButton.innerHTML = 'Add Card';
+  showFormButton.addEventListener('click', function() {
+    this.setAttribute('style', 'display: none;');
+    this.nextSibling.setAttribute('style', 'display: block;');
+  });
+
   const addCardForm = document.createElement('form');
   addCardForm.id = `list-${id}-form`;
+  addCardForm.className = 'form-wrapper';
   addCardForm.onsubmit = function(ev) {
     ev.preventDefault();
     addCard(id);
@@ -143,7 +153,7 @@ function renderList(id, title) {
   };
 
   const textAreaBox = document.createElement('textarea');
-  textAreaBox.className = 'form-control box-shadow';
+  textAreaBox.className = 'form-control box-shadow f-medium';
   textAreaBox.id = `add-card-area-${id}`;
   textAreaBox.name = `add-card-area-${id}`;
   textAreaBox.dataset.id = id;
@@ -159,22 +169,15 @@ function renderList(id, title) {
     }
   });
 
-  const buttonSubmit = document.createElement('div');
-  buttonSubmit.className = 
-    'd-flex justify-content-between align-items-center pt-3';
-  buttonSubmit.innerHTML += `
-        <div class="btn-group">
-          <button type="submit" class="btn btn-sm btn-outline-primary">
-          Add Card</button>
-          <button type="button"  
-          class="btn btn-sm btn-outline-primary">
-            <span class="oi" data-glyph="delete"></span>
-          </button>
-        </div>`;
+  const buttonSubmit = document.createElement('button');
+  buttonSubmit.type = 'submit';
+  buttonSubmit.className = 'btn btn-primary btn-sm btn-block mt-2';
+  buttonSubmit.innerHTML = 'Add Card';
 
   addCardForm.appendChild(textAreaBox);
   addCardForm.appendChild(buttonSubmit);
 
+  listFooter.appendChild(showFormButton);
   listFooter.appendChild(addCardForm);
   listFooter.setAttribute('draggable', false);
 
